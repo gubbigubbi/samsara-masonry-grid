@@ -1,0 +1,36 @@
+/*
+Theme Name: Samsara Child Theme
+Theme URI: http://demo.themevan.com/samsara
+Description: Child Theme Example for Samsara theme.
+Template:  Samsara
+Author: ThemeVan
+Author URI:  http://www.themevan.com
+Version: 1.0
+*/
+@import url(../Samsara/style.css);
+
+/*Change the background color of top bar and dropmenu to white*/
+#top,#primary-menu ul ul{background:#fff;box-shadow:0 5px 5px rgba(0,0,0,0.15);}
+#top.top-opacity{ background:rgba(255,255,255,0.8);}
+
+/*Use black LOGO to instead of the default*/
+h1#logo a{background-image:url(images/logo_black.png);}
+    /* #High Resolution*/
+	@media only screen and (-Webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5) {
+	 h1#logo a {
+	   background:url(images/logo_black@2x.png) no-repeat;
+	   background-size:100% auto;
+	 }
+	}
+
+/*Change menu link color to black*/
+#primary-menu > ul > li a {color:#000;}
+
+/*Change dropmenu color to black*/
+.top-opacity #primary-menu ul ul {background: rgba(255,255,255,0.7);}
+
+/*Change dropmenu item border color*/
+#primary-menu ul ul li {border-color:#ddd;}
+
+/*Change dropmenu item link color*/
+#primary-menu ul ul li a {color:#999;}
