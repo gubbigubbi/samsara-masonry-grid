@@ -5,13 +5,17 @@ jQuery(document).ready(function($){
     "use strict";
     
     //init isotope
-    function isotope_filter(container,selector){
+    function isotope_filter(container,selector,sizer){
        $(container).isotope({ 
           itemSelector: selector,
+		  layoutMode: 'masonry',
+		  masonry: {
+			columnWidth: sizer
+		  },
           animationEngine: 'best-available',
           filter: "*"
        });
-       $(container).isotope( 'reLayout' );
+       $(container).isotope( 'layout' );
        
        
        $('.filter a').click(function(){
@@ -25,10 +29,10 @@ jQuery(document).ready(function($){
        });
     }
     $(window).load(function(){
-        isotope_filter('.portfolio-container','.portfolio-item');
+        isotope_filter('.portfolio-container','.isotope', '.portfolio-item.four');
     });
-    window.onresize = function() { //redo the isotope on resize
-        isotope_filter('.portfolio-container','.portfolio-item');
-    }
+    window.onresize =  isotope_filter('.portfolio-container','.isotope', '.portfolio-item.four');
+    
+	
 
 });

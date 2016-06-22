@@ -29,15 +29,19 @@ get_template_part('content','pageheader');
            <div class="portfolio-posts section container">
              <header> <?php if ( function_exists( 'van_portfolios_filter' ) ) {van_portfolios_filter('portfolios','','',true);}?></header>
 
-             <div id="portfolio-masonry" class="portfolio-container">
+             <div id="portfolio-masonry" class="portfolio-container ajax-post-container">
              <?php
-			 $limit = get_option('posts_per_page');
+			 $limit = 10;
 			 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 			 query_posts('post_type=portfolio&posts_per_page='.$limit.'&paged='.$paged);
 			 get_template_part('content','portfolios');
 			 ?> 
              </div>
-             <?php echo van_pagenavi();?>
+			 
+			 <div class="pagination">
+			  <?php next_posts_link( "Load More Portfolio Item's" ); ?>
+			 </div>
+ 
            </div><!--Portfolios-->
    </div><!-- container -->
 <?php get_footer();?>
